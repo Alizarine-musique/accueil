@@ -15,16 +15,17 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:160px;
+    gap:180px;
     flex-wrap:wrap;
 }
 
 /* LOGOS PLUS GROS */
 .logo{
     width:320px;
-    max-width:80vw;
+    max-width:85vw;
     cursor:pointer;
-    transition:0.3s;
+    transition:0.25s ease;
+    filter:contrast(120%) brightness(1);
 }
 
 /* ALIZARINE = glitch */
@@ -33,16 +34,16 @@ body{
     filter:
     drop-shadow(3px 0 #ff0000)
     drop-shadow(-3px 0 #00ffff)
-    drop-shadow(0 0 25px #ff0000);
-    transform:scale(1.06);
+    drop-shadow(0 0 35px #ff0000);
+    transform:scale(1.08);
 }
 
 /* FEST = pulse */
 .fest:hover{
-    animation:pulse 0.8s infinite;
+    animation:pulse 0.75s infinite;
     filter:
-    drop-shadow(0 0 30px #ff0000);
-    transform:scale(1.1);
+    drop-shadow(0 0 40px #ff0000);
+    transform:scale(1.12);
 }
 
 /* GLITCH */
@@ -58,12 +59,14 @@ body{
 /* PULSE FEST */
 @keyframes pulse{
     0%{transform:scale(1);}
-    50%{transform:scale(1.15);}
+    50%{transform:scale(1.18);}
     100%{transform:scale(1);}
 }
 </style>
 
 </head>
+
+</h1>Les projets d'Alizarine</h1>
 
 <body>
 
