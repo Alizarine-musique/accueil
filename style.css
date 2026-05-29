@@ -167,6 +167,15 @@ h2{
 header.scrolled .main-logo{
     animation:fadeOut 0.5s forwards;
 }
+/*Concerts*/
+.upcoming{
+    color:#ff0000;
+}
+
+.past{
+    color:rgba(255,255,255,0.4);
+    text-decoration:line-through;
+}
 /* Pour téléphone */
 @media (max-width: 768px){
 
