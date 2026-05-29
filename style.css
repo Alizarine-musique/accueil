@@ -157,7 +157,7 @@ h2{
     visibility:visible;
 }
 
-/* MOBILE */
+/* Pour téléphone */
 
 @media (max-width:768px){
 
@@ -176,6 +176,7 @@ h2{
     }
 
     .subtitle{
+        text-align:center;
         font-size:0.8rem;
     }
 
@@ -207,4 +208,3 @@ h2{
         display:block;
     }
 }
-```
