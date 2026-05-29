@@ -42,39 +42,32 @@ body::before{
    HEADER
 ========================= */
 header{
+    position:relative;
     display:flex;
     flex-direction:row;
     align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    padding:20px 20px 10px;
-    text-align:center;
-    transition:0.4s;
-      }
+    justify-content:flex-start;
+    padding:20px;
+}
 /* LOGO */
 .main-logo{
-   justify-self:start;
-   width:300px;
-   max-width:80%;
-   height:auto;
-   margin:0;
-   display:block;
-   filter:
-   drop-shadow(0 0 8px #ff0000)
-   drop-shadow(0 0 18px #ff0000);
-   transition:0.3s;
+    width:260px;
+    height:auto;
+    margin:0;
+    flex:0 0 auto;
 }
 
 /* TEXTE */
-
 .subtitle{
-   justify-self:center;
-   font-family:'Rock Salt', cursive;
-   color:#ff0000;
-   font-size:0.85rem;
-   line-height:1.6;
-   margin:0;
-   text-align:center;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    margin:0;
+    font-family:'Rock Salt', cursive;
+    color:#ff0000;
+    font-size:0.85rem;
+    text-align:center;
+    white-space:nowrap;
 }
 
 /* disparition scroll */
@@ -246,11 +239,12 @@ ul{
     }
 
     .main-logo{
-        width:180px;
+        width:140px;
     }
 
     .subtitle{
         font-size:0.7rem;
+       white-space:normal;
     }
 
     nav{
