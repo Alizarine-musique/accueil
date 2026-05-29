@@ -78,14 +78,12 @@ h1{
 }
 
 .subtitle{
+    font-family:'Rock Salt', cursive;
     color:#ff0000;
-    letter-spacing:4px;
-    opacity:0.8;
-    position:sticky;
-    top:0;
-    background:black;
-    padding:10px 0;
-    z-index:10;
+    letter-spacing:2px;
+    margin:0;
+    font-size:0.9rem;
+    white-space:nowrap;
 }
 
 nav a{
