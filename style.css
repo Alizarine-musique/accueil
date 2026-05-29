@@ -168,6 +168,35 @@ header.scrolled .main-logo{
     animation:fadeOut 0.5s forwards;
 }
 /*Concerts*/
+.concert{
+    position:relative;
+    margin-bottom:15px;
+    cursor:pointer;
+}
+
+/* affiche cachée */
+.poster{
+    position:absolute;
+    left:120%;
+    top:50%;
+    transform:translateY(-50%) scale(0.9);
+
+    width:200px;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:0.3s ease;
+
+    border:2px solid #ff0000;
+    box-shadow:0 0 20px rgba(255,0,0,0.5);
+}
+
+/* apparition au hover */
+.concert:hover .poster{
+    opacity:1;
+    transform:translateY(-50%) scale(1);
+}
 .upcoming{
     color:#ff0000;
 }
@@ -178,6 +207,14 @@ header.scrolled .main-logo{
 }
 /* Pour téléphone */
 @media (max-width: 768px){
+ .poster{
+        position:static;
+        display:block;
+        margin-top:10px;
+        width:100%;
+        transform:none;
+        opacity:1;
+    }
 
     h1{
         font-size:2.8rem;
