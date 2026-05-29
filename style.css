@@ -1,22 +1,35 @@
-```css
+```css id="z1c9ke"
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
+
+/* =========================
+   BASE
+========================= */
 
 body{
     margin:0;
     background:black;
     color:white;
+
     font-family:'Orbitron', sans-serif;
+
     overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* =========================
+   BACKGROUND
+========================= */
 
 body::before{
     content:"";
+
     position:fixed;
     inset:0;
 
     background:
+    linear-gradient(
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.55)
+    ),
     url("background.png");
 
     background-size:cover;
@@ -25,18 +38,31 @@ body::before{
     z-index:-2;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
     display:flex;
-    align-items:center;
-    gap:25px;
+    flex-direction:column;
 
-    padding:25px 20px;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    padding:20px 20px 10px;
+
+    text-align:center;
+
+    transition:0.4s;
 }
+
+/* LOGO */
 
 .main-logo{
     width:260px;
+    max-width:85vw;
     height:auto;
 
     filter:
@@ -46,89 +72,145 @@ header{
     transition:0.3s;
 }
 
+/* TEXTE */
+
 .subtitle{
     font-family:'Rock Salt', cursive;
+
     color:#ff0000;
-    font-size:0.9rem;
-    line-height:1.5;
+
+    font-size:0.85rem;
+    line-height:1.6;
+
     margin:0;
+
+    text-align:center;
 }
 
-/* HEADER DISPARAIT */
+/* disparition scroll */
 
 header.scrolled{
     opacity:0;
     transform:translateY(-30px);
-    transition:0.4s;
 }
 
-/* NAV */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
-    padding:0 20px 30px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    padding:10px 20px 30px;
 }
 
 nav a{
     color:#ff0000;
+
     text-decoration:none;
-    margin-right:20px;
-    font-size:1rem;
+
+    transition:0.2s;
+
+    font-family:'Rock Salt', cursive;
+
+    font-size:0.8rem;
 }
 
 nav a:hover{
     text-shadow:0 0 10px #ff0000;
 }
 
-/* BOX */
+/* =========================
+   BOX
+========================= */
 
 .box{
-    border:2px solid #ff0000;
-    background:rgba(0,0,0,0.7);
-
-    padding:30px;
-
-    width:90%;
+    width:calc(100% - 40px);
     max-width:900px;
 
-    margin:20px auto;
+    margin:0 auto 40px;
 
-    box-shadow:0 0 20px rgba(255,0,0,0.3);
+    padding:25px;
+
+    box-sizing:border-box;
+
+    border:2px solid #ff0000;
+
+    background:rgba(0,0,0,0.65);
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.3);
 }
+
+/* =========================
+   TITRES
+========================= */
 
 h2{
     color:#ff0000;
+
     margin-top:0;
+
+    font-family:'Rock Salt', cursive;
 }
 
-/* CONCERTS */
+h3{
+    color:white;
+
+    letter-spacing:3px;
+
+    font-family:'Orbitron', sans-serif;
+}
+
+/* =========================
+   CONCERTS
+========================= */
+
+ul{
+    padding-left:20px;
+}
 
 .concert{
     position:relative;
-    margin-bottom:16px;
+
+    margin-bottom:18px;
+
     cursor:pointer;
 
-    width:fit-content;
     max-width:100%;
 }
 
 .concert span{
     display:inline-block;
+
+    line-height:1.6;
+
     max-width:100%;
-    line-height:1.5;
+
+    word-break:break-word;
 }
 
-/* FUTUR / PASSÉ */
+/* FUTURS */
 
 .upcoming{
     color:#ff0000;
 }
 
+/* PASSÉS */
+
 .past{
     color:rgba(255,255,255,0.35);
+
     text-decoration:line-through;
 }
 
-/* AFFICHE */
+/* =========================
+   AFFICHE
+========================= */
 
 .poster{
     position:absolute;
@@ -141,23 +223,26 @@ h2{
     opacity:0;
     visibility:hidden;
 
-    transition:0.3s;
+    transition:0.3s ease;
 
     border:2px solid #ff0000;
 
-    box-shadow:0 0 20px rgba(255,0,0,0.5);
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.5);
 
     z-index:999;
 }
 
-/* PC = hover */
+/* hover pc */
 
 .concert:hover .poster{
     opacity:1;
     visibility:visible;
 }
 
-/* Pour téléphone */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width:768px){
 
@@ -167,8 +252,7 @@ h2{
     }
 
     header{
-        flex-direction:column;
-        align-items:flex-start;
+        padding-top:15px;
     }
 
     .main-logo{
@@ -176,14 +260,22 @@ h2{
     }
 
     .subtitle{
-        text-align:center;
-        font-size:0.8rem;
+        font-size:0.7rem;
     }
 
     nav{
-        display:flex;
-        flex-wrap:wrap;
-        gap:10px;
+        gap:12px;
+        padding-bottom:20px;
+    }
+
+    nav a{
+        font-size:0.7rem;
+    }
+
+    .box{
+        width:calc(100% - 20px);
+
+        padding:18px;
     }
 
     .concert{
@@ -193,12 +285,12 @@ h2{
     .poster{
         position:static;
 
-        display:none;
-
         width:100%;
-        max-width:280px;
+        max-width:260px;
 
         margin-top:10px;
+
+        display:none;
 
         opacity:1;
         visibility:visible;
@@ -208,3 +300,4 @@ h2{
         display:block;
     }
 }
+```
