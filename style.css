@@ -6,6 +6,7 @@ body{
     color:white;
     font-family:'Orbitron', sans-serif;
     overflow-x:hidden;
+    overflow-y:visible;
 }
 .main-logo{
     width:300px;
@@ -170,33 +171,32 @@ header.scrolled .main-logo{
 /*Concerts*/
 .concert{
     position:relative;
-    display:block;
     margin-bottom:15px;
     cursor:pointer;
+    width:max-content;
 }
 
 /* affiche cachée */
 .poster{
     position:absolute;
-    left:120%;
-    top:50%;
-    transform:translateY(-50%) scale(0.9);
+    left:105%;
+    top:0%;
+    width:220px;
 
-    width:200px;
-
-    opacity:1;
-    pointer-events:none;
+    opacity:0;
+    visibility:hidden;
 
     transition:0.3s ease;
 
     border:2px solid #ff0000;
     box-shadow:0 0 20px rgba(255,0,0,0.5);
+    z-index:999;
 }
 
 /* apparition au hover */
 .concert:hover .poster{
     opacity:1;
-    transform:translateY(-50%) scale(1);
+    visibility:visible;
 }
 .upcoming{
     color:#ff0000;
