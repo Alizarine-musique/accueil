@@ -1,110 +1,105 @@
-```css id="z1c9ke"
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
 
 /* =========================
    BASE
 ========================= */
 
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    background:black;
-    color:white;
-
     font-family:'Orbitron', sans-serif;
-
+    color:white;
     overflow-x:hidden;
 }
+
+/* =========================
+   BACKGROUND (moins sombre)
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.35)
+        ),
+        url("background.png");
+
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+}
+
+/* =========================
+   CONTAINER GLOBAL
+========================= */
+
 .page{
     max-width:900px;
     margin:0 auto;
     padding:0 20px;
 }
-/* =========================
-   BACKGROUND
-========================= */
-
-body::before{
-    content:"";
-
-    position:fixed;
-    inset:0;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,0.25),
-        rgba(0,0,0,0.55)
-    ),
-    url("background.png");
-
-    background-size:cover;
-    background-position:center;
-
-    z-index:-2;
-}
 
 /* =========================
-   HEADER
+   HEADER (ALIGNÉ BOX)
 ========================= */
+
 header{
-    position:relative;
     display:flex;
-    flex-direction:row;
     align-items:center;
-    justify-content:flex-start;
-    padding:20px;
-}
-/* LOGO */
-.main-logo{
-    width:260px;
-    height:auto;
-    margin:0;
-    flex:0 0 auto;
+    justify-content:space-between;
+    gap:20px;
+
+    padding:20px 0;
 }
 
-/* TEXTE */
+/* LOGO À GAUCHE */
+.main-logo{
+    width:220px;
+    height:auto;
+    flex:0 0 auto;
+
+    filter:
+        drop-shadow(0 0 8px #ff0000)
+        drop-shadow(0 0 18px #ff0000);
+}
+
+/* SUBTITLE CENTRÉ */
 .subtitle{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    margin:0;
+    flex:1;
+    text-align:center;
+
     font-family:'Rock Salt', cursive;
     color:#ff0000;
     font-size:0.85rem;
-    text-align:center;
-    white-space:nowrap;
-}
-
-/* disparition scroll */
-
-header.scrolled{
-    opacity:0;
-    transform:translateY(-30px);
+    margin:0;
 }
 
 /* =========================
-   NAVIGATION
+   NAV
 ========================= */
 
 nav{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-
     gap:18px;
 
-    padding:10px 20px 30px;
+    margin-bottom:20px;
 }
 
 nav a{
     color:#ff0000;
-
     text-decoration:none;
-
-    transition:0.2s;
-
     font-family:'Rock Salt', cursive;
-
     font-size:0.8rem;
+    transition:0.2s;
 }
 
 nav a:hover{
@@ -116,21 +111,16 @@ nav a:hover{
 ========================= */
 
 .box{
-    width:calc(100% - 40px);
+    width:100%;
     max-width:900px;
 
     margin:0 auto 40px;
-
     padding:25px;
 
-    box-sizing:border-box;
-
     border:2px solid #ff0000;
+    background:rgba(0,0,0,0.6);
 
-    background:rgba(0,0,0,0.65);
-
-    box-shadow:
-    0 0 20px rgba(255,0,0,0.3);
+    box-shadow:0 0 20px rgba(255,0,0,0.25);
 }
 
 /* =========================
@@ -139,18 +129,13 @@ nav a:hover{
 
 h2{
     color:#ff0000;
-
-    margin-top:0;
-
     font-family:'Rock Salt', cursive;
+    margin-top:0;
 }
 
 h3{
-    color:white;
-
-    letter-spacing:3px;
-
     font-family:'Orbitron', sans-serif;
+    letter-spacing:2px;
 }
 
 /* =========================
@@ -163,59 +148,47 @@ ul{
 
 .concert{
     position:relative;
-
-    margin-bottom:18px;
-
+    margin-bottom:15px;
     cursor:pointer;
-
-    max-width:100%;
 }
 
+/* texte wrap propre */
 .concert span{
-    display:inline-block;
-
-    line-height:1.6;
-
-    max-width:100%;
-
-    word-break:break-word;
+    display:block;
+    line-height:1.5;
 }
 
-/* FUTURS */
-
+/* FUTURS / PASSÉS */
 .upcoming{
     color:#ff0000;
 }
 
-/* PASSÉS */
-
 .past{
     color:rgba(255,255,255,0.35);
-
     text-decoration:line-through;
 }
 
 /* =========================
-   AFFICHE
+   POSTER (près du curseur)
 ========================= */
 
 .poster{
-    position:fixed;
-    left:105%;
-    top:0;
-    width:220px;
+    position:fixed; /* IMPORTANT : suit la souris */
+    width:200px;
+
     opacity:0;
     visibility:hidden;
-    transition:0.3s ease;
-    border:4px solid #ff0000;
-    box-shadow:
-    0 0 20px rgba(255,0,0,0.5);
+
+    pointer-events:none;
+
+    border:2px solid #ff0000;
+    box-shadow:0 0 20px rgba(255,0,0,0.5);
+
     z-index:999;
 }
 
-/* hover pc */
-
-.concert:hover .poster{
+/* affichage */
+.poster.show{
     opacity:1;
     visibility:visible;
 }
@@ -226,59 +199,31 @@ ul{
 
 @media (max-width:768px){
 
-    body::before{
-        background-position:center top;
-        background-size:cover;
-    }
-
     header{
-        padding-top:15px;
+        flex-direction:column;
+        text-align:center;
     }
 
     .main-logo{
-        width:140px;
+        width:160px;
     }
 
     .subtitle{
-        font-size:0.7rem;
-       white-space:normal;
-    }
-
-    nav{
-        gap:12px;
-        padding-bottom:20px;
-    }
-
-    nav a{
-        font-size:0.7rem;
+        font-size:0.75rem;
     }
 
     .box{
-        width:calc(100% - 20px);
-
         padding:18px;
-    }
-
-    .concert{
-        width:100%;
     }
 
     .poster{
         position:static;
-
-        width:100%;
-        max-width:260px;
-
-        margin-top:10px;
-
         display:none;
-
-        opacity:1;
-        visibility:visible;
+        width:100%;
+        margin-top:10px;
     }
 
     .concert.active .poster{
         display:block;
     }
 }
-```
