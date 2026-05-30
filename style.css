@@ -219,6 +219,13 @@ header.scrolled .main-logo{
 .concert{
     width:100%;
         }
+.box{
+    width:calc(100% - 20px);
+    max-width:100%;
+    margin:0 auto 30px;
+
+    padding:15px;
+}
 .poster{
         position:static;
 
