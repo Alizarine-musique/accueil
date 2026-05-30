@@ -14,6 +14,7 @@ body{
       front-size:1.3;
       line-height:1.2;
    overflow-x:hidden;
+   z-index:20;
 }
 
 /* =========================
@@ -41,11 +42,12 @@ MARChe
     text-align:center;
 }*/
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(0,0,0,0.8);
-    backdrop-filter:blur(6px);
+   position:sticky;
+   top:0;
+   z-index:10;
+   display:flex;
+   flex-direction:column;
+   align-items:center;
 }
 /* LOGO CENTRÉ */
 .main-logo{
