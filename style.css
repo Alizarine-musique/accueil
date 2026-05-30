@@ -94,6 +94,7 @@ nav a:hover{
 h2{
     color:#ff0000;
     font-family:'Rock Salt', cursive;
+    text-align: center;
     margin-top:0;
 }
 h3{
@@ -159,9 +160,7 @@ ul{
 /* =========================
    MOBILE (ZÉRO DÉBORDEMENT)
 ========================= */
-
 @media (max-width:768px){
-
     header{
         padding:15px;
     }
@@ -169,20 +168,16 @@ ul{
     .main-logo{
         width:180px;
     }
-
     .subtitle{
         font-size:0.75rem;
     }
-
     nav{
         gap:10px;
     }
-
     .box{
         padding:15px;
         width:calc(100% - 20px);
     }
-
     .concert{
         width:100%;
     }
@@ -190,12 +185,9 @@ ul{
     .poster{
         position:static;
         display:none;
-
         width:100%;
         max-width:250px;
-
         margin-top:10px;
-
         transform:none;
     }
 
