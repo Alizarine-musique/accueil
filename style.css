@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
+
+/* =========================
+   BASE
+========================= */
+
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
@@ -6,237 +14,222 @@ body{
     color:white;
     font-family:'Orbitron', sans-serif;
     overflow-x:hidden;
-    overflow-y:visible;
 }
-.main-logo{
-    width:300px;
-    height:auto;
-    max-width:100%;
-    display:block;
-    margin:0px auto 10px auto;
-    transition:0.3s;
-    filter:
-    drop-shadow(0 0 8px #ff0000)
-    drop-shadow(0 0 18px #ff0000);
-    transition:0.3s;
-}
-/* BACKGROUND */
+
+/* =========================
+   BACKGROUND
+========================= */
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
+
     background:
-    url("background.png");
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+        url("background.png");
+
     background-size:cover;
     background-position:center;
     z-index:-2;
 }
-/* OVERLAY */
 
-.overlay{
-    position:fixed;
-    inset:0;
-
-    background:
-    repeating-linear-gradient(
-        0deg,
-        rgba(255,255,255,0.02),
-        rgba(255,255,255,0.02) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-
-    pointer-events:none;
-
-    z-index:-1;
-}
+/* =========================
+   HEADER (LOGO CENTRÉ)
+========================= */
 
 header{
     display:flex;
-    align-items:center; /* ⬅ même hauteur */
-    justify-content:flex-start;
-    gap:30px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-    padding:40px 20px;
-}
-header.scrolled{
-    opacity:0;
-    transform:translateY(-20px);
-}
-h1{
-    font-size:5rem;
-    color:#ff0000;
-    text-shadow:
-    0 0 10px #ff0000,
-    0 0 25px #ff0000;
-    letter-spacing:3px;
+    text-align:center;
+    padding:25px 15px;
 }
 
+/* LOGO CENTRÉ */
+.main-logo{
+    width:280px;
+    max-width:80%;
+
+    margin:0 auto;
+
+    filter:
+        drop-shadow(0 0 8px #ff0000)
+        drop-shadow(0 0 18px #ff0000);
+}
+
+/* SUBTITLE */
 .subtitle{
+    margin-top:10px;
     font-family:'Rock Salt', cursive;
     color:#ff0000;
-    letter-spacing:2px;
-    margin:0;
-    font-size:0.9rem;
-    white-space:normal;
+    font-size:0.85rem;
 }
+
+/* =========================
+   NAV
+========================= */
 
 nav{
     display:flex;
     justify-content:center;
-    align-items:center;
-
     flex-wrap:wrap;
-    gap:20px;
+    gap:18px;
 
-    width:100%;
-    margin:10px auto 25px auto;
-    padding:0;
+    padding:10px 15px 25px;
 }
+
+nav a{
+    color:#ff0000;
+    text-decoration:none;
+    font-family:'Rock Salt', cursive;
+    font-size:0.85rem;
+}
+
+nav a:hover{
+    text-shadow:0 0 10px #ff0000;
+}
+
+/* =========================
+   BOX (SAFE MOBILE)
+========================= */
 
 .box{
-    border:3px solid #ff0000;
-    background:rgba(0,0,0,0.7);
-    padding:30px;
-    box-shadow:0 0 20px rgba(255,0,0,0.3);
+    width:100%;
     max-width:900px;
-    width:100%;
-    margin:auto;
-    box-sizing:border-box;
-}
 
-h2{
-    color:#39ff14;
-    margin-top:0;
-}
-.logo.aliza{
-    width:500px;
-    max-width:90%;
-
-    filter:
-    drop-shadow(0 0 5px #ff0000)
-    drop-shadow(0 0 10px #ff0000)
-    drop-shadow(0 0 20px #ff0000);
-
-    transition:0.2s;
-
-    position:relative;
-}
-
-/* HOVER GLITCH */
-
-.logo:hover{
-
-    animation:
-    glitch 0.15s infinite,
-    flicker 0.08s infinite;
-
-    filter:
-    drop-shadow(3px 0 #ff0000)
-    drop-shadow(-3px 0 #00ffff)
-    drop-shadow(0 0 20px #ff0000)
-    drop-shadow(0 0 40px #ff0000);
-
-}
-
-/* GLITCH ANIMATION */
-
-@keyframes flicker{
-    0%{opacity:1;}
-    10%{opacity:0.4;}
-    20%{opacity:1;}
-    30%{opacity:0.3;}
-    40%{opacity:1;}
-    50%{opacity:0.5;}
-    60%{opacity:1;}
-    70%{opacity:0.2;}
-    80%{opacity:1;}
-    90%{opacity:0.6;}
-    100%{opacity:1;}
-}
-/* animation scroll */
-@keyframes fadeOut{
-    from{
-        opacity:1;
-        transform:translateY(0);
-    }
-    to{
-        opacity:0;
-        transform:translateY(-30px);
-    }
-}
-
-header.scrolled .main-logo{
-    animation:fadeOut 0.5s forwards;
-}
-/*Concerts*/
-.concert{
-    position:relative;
-    margin-bottom:15px;
-    cursor:pointer;
-    width:100%;
-    max-width:100%
-}
-.concert span{
-    display:block;
-    word-wrap:break-word;
-    overflow-warp:break-word;
-}
-
-/* affiche cachée */
-.poster{
-    position:absolute;
-    left:105%;
-    top:0%;
-    width:220px;
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:0.3s ease;
+    margin:0 auto 40px;
+    padding:20px;
 
     border:2px solid #ff0000;
-    box-shadow:0 0 20px rgba(255,0,0,0.5);
-    z-index:999;
+    background:rgba(0,0,0,0.65);
+
+    box-shadow:0 0 20px rgba(255,0,0,0.25);
+
+    overflow:hidden;
 }
 
-/* apparition au hover */
-.concert:hover .poster{
-    opacity:1;
-    visibility:visible;
+/* =========================
+   TITRES
+========================= */
+
+h2{
+    color:#ff0000;
+    font-family:'Rock Salt', cursive;
+    margin-top:0;
 }
+
+h3{
+    font-family:'Orbitron', sans-serif;
+    letter-spacing:2px;
+}
+
+/* =========================
+   CONCERTS
+========================= */
+
+ul{
+    padding-left:0;
+    list-style:none;
+}
+
+.concert{
+    position:relative;
+    padding:8px 0;
+
+    cursor:pointer;
+
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+}
+
+/* TEXTES */
+.concert span{
+    display:block;
+    line-height:1.5;
+}
+
+/* FUTURS / PASSÉS */
 .upcoming{
     color:#ff0000;
 }
 
 .past{
-    color:rgba(255,255,255,0.4);
+    color:rgba(255,255,255,0.35);
     text-decoration:line-through;
 }
-/* Pour téléphone */
-@media (max-width: 768px){
-.concert{
-    width:100%;
-        }
-.box{
-    width:calc(100% - 20px);
-    max-width:100%;
-    margin:0 auto 30px;
 
-    padding:15px;
-}
+/* =========================
+   AFFICHES (DANS LA BOX)
+========================= */
+
 .poster{
+    position:absolute;
+
+    top:50%;
+    left:100%;
+    transform:translate(10px,-50%);
+
+    width:180px;
+
+    opacity:0;
+    visibility:hidden;
+
+    border:2px solid #ff0000;
+    box-shadow:0 0 20px rgba(255,0,0,0.5);
+
+    transition:0.2s ease;
+
+    z-index:10;
+}
+
+/* hover uniquement DANS la box */
+.concert:hover .poster{
+    opacity:1;
+    visibility:visible;
+}
+
+/* =========================
+   MOBILE (ZÉRO DÉBORDEMENT)
+========================= */
+
+@media (max-width:768px){
+
+    header{
+        padding:15px;
+    }
+
+    .main-logo{
+        width:180px;
+    }
+
+    .subtitle{
+        font-size:0.75rem;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    .box{
+        padding:15px;
+        width:calc(100% - 20px);
+    }
+
+    .concert{
+        width:100%;
+    }
+
+    .poster{
         position:static;
+        display:none;
 
         width:100%;
-        max-width:300px;
+        max-width:250px;
 
         margin-top:10px;
-
-        opacity:0;
-        visibility:hidden;
-        display:none;
 
         transform:none;
     }
@@ -245,23 +238,5 @@ header.scrolled .main-logo{
         display:block;
         opacity:1;
         visibility:visible;
-    }
-    h1{
-        font-size:2.8rem;
-        text-align:center;
-    }
-
-    .subtitle{
-        text-align:center;
-        font-size:0.9rem;
-    }
-
-    nav{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-    .main-logo{
-        width:180px;
     }
 }
