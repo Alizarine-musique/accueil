@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 
 /* =========================
    BASE
@@ -9,7 +10,7 @@ body{
     margin:0;
     background:black;
     color:white;
-    font-family:'Permanent Marker', cursive;
+    font-family:'IM Fell English SC', cursive;
     overflow-x:hidden;
 }
 
