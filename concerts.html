@@ -24,8 +24,8 @@
         <section class="hero">
             <div class="box">
                 <h1>CONCERTS</h1>
+                <h2>2026</h2>
                     <ul>
-                        <h2>2026</h2>
                         <li class="concert" data-date="2026-10-10">
                             <span>10 octobre 2026 : Peyerelevade(19) - Pécor's not dead #3</span>
                         </li>
@@ -68,7 +68,9 @@
                         <li class="concert" data-date="2026-04-04">
                             <span>04 avril 2026 : Les Barthes(82) - Les 10 ans du Moun's </span>
                         </li>
-                    <h2>2025</h2>
+                    </ul>
+                <h2>2025</h2>
+                    <ul>
                         <li class="concert" data-date="2025-09-27">
                             <span>27 septembre 2025 : Alençon(61) - Raffal Fest</span>
                         </li>
@@ -117,7 +119,9 @@
                         <li class="concert" data-date="2025-02-16">
                             <span>16 février 2025 : Le Fidelaire(27) - TAOS, Merrick</span>
                         </li>
-                    <h2>2024</h2>
+                    </ul>
+                <h2>2024</h2>
+                    <ul>    
                         <li class="concert" data-date="2024-10-19">
                             <span>19 octobre 2024 : Dollon(72) - Sam's Day</span>
                         </li>
@@ -151,7 +155,9 @@
                         <li class="concert" data-date="2024-01-27">
                             <span>27 janvier 2024 : Rennes(35) - Keplair </span>
                         </li>
-                    <h2>2023</h2>
+                    </ul>
+                <h2>2023</h2>
+                    <ul>
                         <li class="concert" data-date="2023-12-09">
                             <span>09 décembre 2023 : Verneuil s/ Avre(27) - Royal Casino, 33dogs </span>
                         </li>
@@ -173,65 +179,13 @@
                         <li class="concert" data-date="2023-01-21">
                             <span>21 janvier 2023 : Verneuil s/ Avre(27) - El Coyoté, Mercimaisnomercy </span>
                         </li>
-                    <h2>2022</h2>
+                    </ul>
+                <h2>2022</h2>
+                    <ul>
                         <li class="concert" data-date="2022-10-26">
                             <span>26 octobre 2022 : Evreux(27) - Gang of Venus, Manuia CAC </span>
                         </li>
                     </ul>
         </section>
-
-    <script>
-
-/* HEADER */
-
-window.addEventListener("scroll", function(){
-
-    const header = document.getElementById("header");
-
-    if(window.scrollY > 50){
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-
-});
-
-/* DATES */
-
-const today = new Date();
-
-const concerts = document.querySelectorAll(".concert");
-
-concerts.forEach(item => {
-
-    const concertDate =
-    new Date(item.dataset.date);
-
-    if(concertDate >= today){
-        item.classList.add("upcoming");
-    } else {
-        item.classList.add("past");
-    }
-
-});
-
-/* MOBILE CLICK */
-
-if(window.innerWidth <= 768){
-
-    concerts.forEach(concert => {
-
-        concert.addEventListener("click", () => {
-
-            concert.classList.toggle("active");
-
-        });
-
-    }
-
-}
-
-</script>
-
-</body>
+    </body>
 </html>
