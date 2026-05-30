@@ -181,7 +181,13 @@ header.scrolled .main-logo{
     position:relative;
     margin-bottom:15px;
     cursor:pointer;
-    width:max-content;
+    width:100%;
+    max-width:100%
+}
+.concert span{
+    display:block;
+    word-wrap:break-word;
+    overflow-warp:break-word;
 }
 
 /* affiche cachée */
