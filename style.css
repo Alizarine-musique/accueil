@@ -153,7 +153,7 @@ ul{
 
 /* =========================
    AFFICHES (DANS LA BOX)
-========================= */
+========================= 
 .poster{
    position:absolute;
    top:50%;
@@ -168,12 +168,14 @@ ul{
    z-index:50;
 }
 
-/* hover uniquement DANS la box */
+ hover uniquement DANS la box 
 .concert:hover .poster{
     opacity:1;
     visibility:visible;
     transform:translate(20px,-50%);
 }
+
+*/
 /*Page musique*/
 .video-grid{
     display:grid;
@@ -280,7 +282,7 @@ ul{
         width:100%;
     }
 
-    .poster{
+   /* .poster{
         position:static;
         display:none;
         width:100%;
@@ -293,5 +295,5 @@ ul{
         display:block;
         opacity:1;
         visibility:visible;
-    }
+    }*/
 }
