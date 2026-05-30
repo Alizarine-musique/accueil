@@ -245,7 +245,7 @@ ul{
 .next-concert{
   border:2px solid #fff;
   padding:10px;
-  box-shadow:0 0 25px #29FF00;
+  box-shadow:0 0 25px #FF0000;
   transform:scale(1.02);
   position:relative;
 }
