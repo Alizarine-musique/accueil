@@ -138,11 +138,9 @@ ul{
 .concert{
     position:relative;
     padding:8px 0;
-
     cursor:pointer;
-
-    word-wrap:break-word;
-    overflow-wrap:break-word;
+    display:block;
+    width:100%;
 }
 
 /* TEXTES */
@@ -167,13 +165,11 @@ ul{
 
 .poster{
     position:absolute;
-
     top:50%;
     left:100%;
     transform:translate(10px,-50%);
-
-    width:180px;
-
+    width:200px;
+   max-width:40vw;
     opacity:0;
     visibility:hidden;
 
@@ -181,14 +177,15 @@ ul{
     box-shadow:0 0 20px rgba(255,0,0,0.5);
 
     transition:0.2s ease;
-
-    z-index:10;
+   pointer-events:none;
+    z-index:50;
 }
 
 /* hover uniquement DANS la box */
 .concert:hover .poster{
     opacity:1;
     visibility:visible;
+    transform:translate(20px,-50%);
 }
 
 /* =========================
