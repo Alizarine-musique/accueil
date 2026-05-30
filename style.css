@@ -88,7 +88,7 @@ nav a:hover{
     width:100%;
     max-width:900px;
     margin:0 auto 40px;
-   margin-top:5px;
+   margin-top:15px;
     padding:20px;
     border:2px solid #ff0000;
     background:rgba(0,0,0,0.65);
@@ -174,7 +174,29 @@ ul{
     visibility:visible;
     transform:translate(20px,-50%);
 }
-
+/*Page musique*/
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:20px;
+}
+@media (max-width:900px){
+    .video-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+@media (max-width:600px){
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+}
+.video iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:2px solid #29FF00;
+    box-shadow:0 0 15px rgba(41,255,0,0.2);
+}
 /* =========================
    MOBILE (ZÉRO DÉBORDEMENT)
 ========================= */
