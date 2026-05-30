@@ -149,8 +149,8 @@ ul{
 .poster{
    position:absolute;
    top:50%;
-   width:400px;
-   max-width:60vw;
+   width:300px;
+   max-width:50vw;
    opacity:0;
    visibility:hidden;
    border:2px solid #ff0000;
