@@ -40,52 +40,39 @@ if (nextConcert) {
   nextConcert.classList.add("next-concert");
 }
 */
-
-const container = document.querySelector(".concert-list"); 
-// 👉 mets ici le parent de tes concerts (ul ou div)
-
-const concerts = Array.from(container.querySelectorAll(".concert"));
+const concerts = Array.from(document.querySelectorAll(".concert"));
 
 const now = new Date();
 
-// 1. conversion + classification
-const sorted = concerts.map(el => {
-  const date = new Date(el.dataset.date);
-
-  return {
-    el,
-    date
-  };
-});
-
-// 2. tri chronologique (du plus proche au plus loin)
-sorted.sort((a, b) => a.date - b.date);
-
-// 3. réinjection dans le DOM (ordre corrigé)
-sorted.forEach(item => {
-  container.appendChild(item.el);
-});
-
-// 4. gestion past / upcoming + prochain concert
 let nextConcert = null;
 let nextDate = null;
 
-sorted.forEach(item => {
-  const el = item.el;
+// 1. nettoyer + classer
+concerts.forEach(el => {
+  const date = new Date(el.dataset.date);
 
-  if (item.date < now) {
+  if (isNaN(date)) return;
+
+  if (date < now) {
     el.classList.add("past");
   } else {
     el.classList.add("upcoming");
 
-    if (!nextDate || item.date < nextDate) {
-      nextDate = item.date;
+    if (!nextDate || date < nextDate) {
+      nextDate = date;
       nextConcert = el;
     }
   }
 });
 
-// 5. highlight prochain concert
+// 2. TRI GLOBAL CHRONOLOGIQUE (IMPORTANT)
+concerts
+  .sort((a, b) => new Date(a.dataset.date) - new Date(b.dataset.date))
+  .forEach(el => {
+    el.parentNode.appendChild(el);
+  });
+
+// 3. mise en avant du prochain concert
 if (nextConcert) {
   nextConcert.classList.add("next-concert");
 }
