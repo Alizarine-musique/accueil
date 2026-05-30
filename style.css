@@ -32,14 +32,21 @@ body::before{
 /* =========================
    HEADER (LOGO CENTRÉ)
 ========================= */
-header{
+/*header{
+MARChe
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
+}*/
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.8);
+    backdrop-filter:blur(6px);
 }
-
 /* LOGO CENTRÉ */
 .main-logo{
     width:300px;
