@@ -39,7 +39,8 @@ header{
     align-items:center;
     justify-content:center;
     text-align:center;
-   margin-bottom:-25px;
+   margin-bottom:-40px;
+   z-index:-1;
 }
 /* LOGO CENTRÉ */
 .main-logo{
