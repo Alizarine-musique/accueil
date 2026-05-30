@@ -249,3 +249,24 @@ ul{
   transform:scale(1.02);
   position:relative;
 }
+/*ALBUM*/
+.album-layout{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+/* les deux colonnes */
+.album-layout .box{
+  flex:1;
+  max-width:500px;
+}
+
+/* responsive mobile */
+@media (max-width:900px){
+  .album-layout{
+    flex-direction:column;
+  }
+}
+
