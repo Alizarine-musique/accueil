@@ -72,10 +72,10 @@ nav a{
     color:#ff0000;
     text-decoration:none;
     font-family:'Rock Salt', cursive;
-    font-size:0.85rem;
+    font-size:1.1rem;
 }
 nav a:hover{
-    text-shadow:0 0 10px #ff0000;
+    text-shadow:0 0 50px #29FF00;
 }
 
 /* =========================
