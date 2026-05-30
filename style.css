@@ -127,7 +127,6 @@ ul{
 .upcoming{
     color:#29FF00;
 }
-
 .past{
     color:#FF0000;
     text-decoration:line-through;
@@ -136,23 +135,18 @@ ul{
 /* =========================
    AFFICHES (DANS LA BOX)
 ========================= */
-
 .poster{
-    position:absolute;
-    top:50%;
-    left:100%;
-    transform:translate(10px,-50%);
-    width:200px;
+   position:absolute;
+   top:50%;
+   width:200px;
    max-width:40vw;
-    opacity:0;
-    visibility:hidden;
-
-    border:2px solid #ff0000;
-    box-shadow:0 0 20px rgba(255,0,0,0.5);
-
-    transition:0.2s ease;
+   opacity:0;
+   visibility:hidden;
+   border:2px solid #ff0000;
+   box-shadow:0 0 20px rgba(255,0,0,0.5);
+   transition:0.2s ease;
    pointer-events:none;
-    z-index:50;
+   z-index:50;
 }
 
 /* hover uniquement DANS la box */
